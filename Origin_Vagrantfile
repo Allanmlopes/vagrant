@@ -1,0 +1,8 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/bionic64" # Nesta parte vai realizar o download da imagem a partir da hashicorp, caso voce ja tenha rodado, a imagem só vai ser carregada, e nao feita o download novamente. 
+  config.vm.network "forwarded_port", guest: 80, host: 8080 # Nessa parte realiza o redirecionamento da porta.
+  config.vm.network "public_network", ip: "192.168.1.55"   # Se deixar sem o , ip:192.168.1.55 a maquina sobe com ip DHCP ao invex de fixo.
+  config.vm.provision "shell", path: "./scripts_provision/script.sh"
+    #inline: "apt update && apt install -y nginx && service nginx start" #nessa linha comentada eu realizo uma sequencia de comandos: update / install do nginx e startar ele apos instalação
+  config.vm.synced_folder "site/", "/var/www/html"
+end

@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/allan/Documentos/Projeto_Vagrant/site","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/allan/Documentos/Projeto_Vagrant","disabled":false,"__vagrantfile":true}}}
